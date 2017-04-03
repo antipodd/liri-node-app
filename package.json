@@ -1,0 +1,29 @@
+{
+  "name": "liri-node-app",
+  "version": "1.0.0",
+  "description": "Week 10 Homework",
+  "main": "liri.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/antipodd/liri-node-app.git"
+  },
+  "keywords": [
+    "twitter",
+    "spotify",
+    "OMDB"
+  ],
+  "author": "Karel Hartlieb",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/antipodd/liri-node-app/issues"
+  },
+  "homepage": "https://github.com/antipodd/liri-node-app#readme",
+  "dependencies": {
+    "omdb-client": "^1.0.6",
+    "spotify": "^0.3.0",
+    "twitter": "^1.7.0"
+  }
+}
