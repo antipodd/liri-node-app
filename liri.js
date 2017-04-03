@@ -13,8 +13,7 @@ var omdbApi = require('omdb-client');
 //require file system
 var fs = require("fs"); 
 
-//Twitter authenication
-//console.log(keys.twitterKeys);
+//Twitter authentication
 var client = new Twitter(keys.twitterKeys);
 
 var instruction = process.argv[2];
@@ -44,20 +43,6 @@ switch(instruction) {
         console.log("Tell me what to do");*/
 }
 
-/*if (process.argv[2] === "my-tweets") {
-    //get tweets for twitter account @antipodding with a max return of 20 tweets
-    getTweets();
-}*/
-
-//get song information from Spotify (default search for "The Sign" by Ace of Base)
-
-//spotifyThisSong("The Sign", "Ace of Base");
-
-
-//get movie information from OMDB (default search for "Mr Nobody")
-
-//movieThis('Mr Nobody');
-
 //do-what-it-says
 function doWhatItSays () {
     fs.readFile("random.txt", "utf8", function(error, data) {
@@ -69,7 +54,7 @@ function doWhatItSays () {
         }   
     });
 }
-
+//get song information from Spotify (included optional artist argument)
 function spotifyThisSong (song, artist) {
     if (!artist) {
         var artist = "";
@@ -86,7 +71,7 @@ function spotifyThisSong (song, artist) {
         console.log("Album: " + data.tracks.items[0].album.name);
     });
 }
-
+//get movie information from OMDB 
 function movieThis (movieName) {
     var params = {
     title: movieName,
@@ -122,7 +107,7 @@ function movieThis (movieName) {
         console.log("-------------------------------------------------------------------");
     });
 }
-
+//get latest 20 tweets from @antipodding
 function getTweets () {
     var params = {
     screen_name: 'antipodding',
