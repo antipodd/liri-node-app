@@ -134,6 +134,7 @@ function getTweets () {
         //console.log(tweets[0].created_at);
         //console.log(tweets[0].text);
         appendToLogFile("my-tweets \n")
+        var tweetLog = "";
         for (var i = 0; i < tweets.length; i++) {
             //print to console
             console.log("");
@@ -143,9 +144,10 @@ function getTweets () {
             console.log("Created at: " + tweets[i].created_at);
             console.log("");
             console.log("-------------------------------------------------------------------");
-            //append to log.txt
-            appendToLogFile("Tweet " + (i+1) + ": \n" + tweets[i].text + "\n" + "Created at: " + tweets[i].created_at + "\n\n")   
+            tweetLog += "Tweet " + (i+1) + ": \n" + tweets[i].text + "\n" + "Created at: " + tweets[i].created_at + "\n\n"
         }
+        //append to log.txt
+            appendToLogFile(tweetLog)   
       }
     });
 }
