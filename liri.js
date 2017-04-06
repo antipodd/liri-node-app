@@ -66,6 +66,8 @@ function spotifyThisSong (song, artist) {
             console.log('Error occurred: ' + err);
             return;
         }
+        //console.log(data.tracks.items)
+        if (data.tracks.items.length !== 0) {
         var artistName = data.tracks.items[0].artists[0].name;
         var songName = data.tracks.items[0].name;
         var externalLink = data.tracks.items[0].external_urls.spotify;
@@ -79,6 +81,10 @@ function spotifyThisSong (song, artist) {
         
         //Add to log.txt
         appendToLogFile("spotify-this-song: " + song + "\nArtist: " + artistName + "\n" + "Song: " + songName + "\n" + "Link: " + externalLink + "\n" + "Album: " + albumName + "\n\n");
+        } else {
+            console.log("No song found, try search again with artist specified");
+            appendToLogFile("spotify-this-song: " + song + "\nNo song found, try search again with artist specified\n\n")
+        }
     });
 }
 //get movie information from OMDB 
